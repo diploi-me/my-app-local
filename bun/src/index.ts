@@ -5,6 +5,6 @@ Bun.serve({
   port,
   hostname,
   fetch(req) {
-    return new Response('Bun!');
+    return new Response('TEST!');
   },
 });
