@@ -1,0 +1,27 @@
+# This file is used to build the infrastructure for a deployment.
+# After editing something here, apply the changes on the Diploi dashboard.
+# For more information, see https://diploi.com/yaml
+
+diploiVersion: v1.0
+components:
+  - name: Bun
+    identifier: bun
+    package: https://github.com/diploi/component-bun#main
+    env:
+      include:
+        - mongo.*
+        - postgres.*
+  - name: React + Vite
+    identifier: react-vite
+    package: https://github.com/diploi/component-react-vite#main
+    env:
+      include:
+        - mongo.*
+        - postgres.*
+addons:
+  - name: PostgreSQL
+    identifier: postgres
+    package: https://github.com/diploi/addon-postgres#main
+  - name: MongoDB
+    identifier: mongo
+    package: https://github.com/diploi/addon-mongo#main
